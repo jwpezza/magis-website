@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magis Strategic Resources — Unlocking strategic resources that shape the future</title>
+<meta name="description" content="Magis Strategic Resources works at the intersection of natural resources, investment, public policy and strategic development — advancing critical mineral projects and strengthening resilient supply chains.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 88'%3E%3Cpolyline points='9,80 9,24 50,58 91,10 91,80' fill='none' stroke='%230B1F30' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='58' r='10' fill='%23C08A2E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=Spectral:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --prussian-deep:#0B1F30;
+  --prussian:#14344C;
+  --prussian-line:#22506F;
+  --bone:#F0F1EE;
+  --bone-2:#E1E4DF;
+  --graphite:#3A444C;
+  --graphite-soft:#6B7680;
+  --brass:#C08A2E;
+  --sea:#86A9BC;
+
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Spectral',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+
+  --gut:clamp(20px,5vw,64px);
+  --maxw:1240px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bone);
+  color:var(--graphite);
+  font-family:var(--body);
+  font-weight:400;
+  font-size:clamp(16px,1.05vw,18px);
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+
+/* ---------- type ---------- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+.eyebrow--muted{color:var(--graphite-soft)}
+.eyebrow--sea{color:var(--sea)}
+
+h1,h2,h3,.disp{
+  font-family:var(--display);
+  font-variation-settings:'wdth' 118;
+  font-weight:600;
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  color:var(--prussian-deep);
+  text-wrap:balance;
+}
+h1{font-size:clamp(38px,6.6vw,86px);font-weight:700}
+h2{font-size:clamp(28px,3.6vw,48px)}
+h3{font-size:clamp(19px,1.5vw,23px);font-variation-settings:'wdth' 108;letter-spacing:-0.005em}
+
+.standfirst{
+  font-size:clamp(18px,1.55vw,24px);
+  font-weight:300;
+  line-height:1.6;
+  max-width:66ch;
+}
+.lede{font-size:clamp(17px,1.25vw,20px);font-weight:300;line-height:1.68;max-width:64ch}
+p+p{margin-top:1.1em}
+.measure{max-width:68ch}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(11,31,48,.94);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--prussian-line);
+}
+.nav__in{
+  max-width:var(--maxw);margin:0 auto;
+  padding:0 var(--gut);
+  height:62px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.mark{
+  display:flex;align-items:center;gap:11px;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.mark svg{display:block;flex:none}
+.mark__rule{width:1px;height:22px;background:var(--prussian-line)}
+.mark__type{
+  font-family:var(--display);
+  font-variation-settings:'wdth' 125;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:.17em;
+  color:var(--bone);
+  line-height:1;
+}
+.nav__links{display:flex;gap:26px;align-items:center}
+.nav__links a{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--sea);
+  text-decoration:none;
+  padding:4px 0;
+  border-bottom:1px solid transparent;
+  transition:color .18s,border-color .18s;
+}
+.nav__links a:hover,.nav__links a:focus-visible{color:var(--bone);border-color:var(--brass)}
+@media(max-width:860px){.nav__links{display:none}}
+
+/* ---------- signature: the graticule ---------- */
+#grat{
+  position:absolute;top:50%;left:62%;
+  transform:translate(-50%,-50%);
+  width:min(128vh,1180px);height:min(128vh,1180px);
+  z-index:0;pointer-events:none;
+}
+.hero__veil{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(120% 92% at 10% 50%, rgba(11,31,48,.97) 0%, rgba(11,31,48,.72) 44%, rgba(11,31,48,0) 80%),
+    linear-gradient(180deg, rgba(11,31,48,.55) 0%, rgba(11,31,48,0) 30%, rgba(11,31,48,.72) 100%);
+}
+#gratFrag{
+  position:absolute;top:50%;right:-14%;
+  transform:translateY(-50%);
+  width:min(78vh,720px);height:min(78vh,720px);
+  z-index:0;pointer-events:none;opacity:.5;
+}
+.sec--deep{position:relative;overflow:hidden}
+.sec--deep .wrap{position:relative;z-index:2}
+.contact__trace{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    linear-gradient(to bottom, transparent 33.5%, rgba(34,80,111,.5) 33.5%, rgba(34,80,111,.5) calc(33.5% + 1px), transparent calc(33.5% + 1px)),
+    linear-gradient(to bottom, transparent 64%, rgba(34,80,111,.38) 64%, rgba(34,80,111,.38) calc(64% + 1px), transparent calc(64% + 1px));
+}
+.sec--ink{position:relative;overflow:hidden}
+.sec--ink .wrap{position:relative;z-index:2}
+
+/* ---------- hero ---------- */
+.hero{
+  background:var(--prussian-deep);
+  color:var(--bone);
+  padding:clamp(96px,12vw,164px) 0 clamp(88px,10vw,140px);
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{color:var(--bone);margin:20px 0 0;max-width:16ch}
+.hero .standfirst{color:#C6D3DC;margin-top:28px;max-width:52ch}
+.hero__meta{
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sea);
+}
+.hero__meta i{width:26px;height:1px;background:var(--brass);display:inline-block;font-style:normal}
+
+/* ---------- sections ---------- */
+.sec{padding:clamp(72px,9vw,124px) 0}
+.sec--bone{background:var(--bone)}
+.sec--bone2{background:var(--bone-2)}
+.sec--deep{background:var(--prussian);color:#D5E0E8}
+.sec--deep h2,.sec--deep h3{color:var(--bone)}
+.sec--ink{background:var(--prussian-deep);color:#C6D3DC}
+.sec--ink h2,.sec--ink h3{color:var(--bone)}
+
+.sec__head{margin-bottom:clamp(38px,4.5vw,58px)}
+.sec__head h2{margin-top:14px}
+.sec__head .lede{margin-top:22px}
+
+.rule{height:1px;background:var(--bone-2);border:0;margin:0}
+.sec--deep .rule,.sec--ink .rule{background:var(--prussian-line)}
+
+/* ---------- mission ---------- */
+.mission__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,72px)}
+@media(max-width:880px){.mission__grid{grid-template-columns:1fr}}
+.pull{
+  border-left:2px solid var(--brass);
+  padding-left:26px;
+  font-size:clamp(19px,1.7vw,26px);
+  font-weight:300;
+  line-height:1.5;
+  color:var(--prussian-deep);
+}
+
+/* ---------- calls to action ---------- */
+.cta{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:32px;
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass);text-decoration:none;
+  padding:14px 22px;
+  border:1px solid var(--brass);
+  transition:background .18s,color .18s;
+}
+.cta em{font-style:normal;transition:transform .18s;display:inline-block}
+.cta:hover,.cta:focus-visible{background:var(--brass);color:var(--prussian-deep)}
+.cta:hover em,.cta:focus-visible em{transform:translateX(3px)}
+.cta--dark{margin-top:26px}
+
+.svc__lbl{
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--graphite-soft);margin:24px 0 10px;
+}
+
+/* ---------- services ---------- */
+.svc__state{
+  font-size:clamp(19px,1.8vw,27px);
+  font-weight:300;
+  line-height:1.5;
+  color:var(--prussian-deep);
+  max-width:30ch;
+}
+.svc__state b{font-weight:600}
+.svc__top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,72px);align-items:start;margin-bottom:clamp(38px,4vw,54px)}
+@media(max-width:880px){.svc__top{grid-template-columns:1fr}}
+.svc__sectors{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.svc__sectors span{
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--bone-2);padding:8px 13px;color:var(--graphite);
+}
+.svc__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bone-2);border:1px solid var(--bone-2)}
+@media(max-width:900px){.svc__grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.svc__grid{grid-template-columns:1fr}}
+.svc__cell{background:var(--bone);padding:clamp(22px,2.2vw,30px);display:flex;flex-direction:column;gap:11px;min-height:190px}
+.svc__cell em{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-style:normal}
+.svc__cell h4{
+  font-family:var(--display);font-variation-settings:'wdth' 112;font-weight:600;
+  font-size:16px;color:var(--prussian-deep);line-height:1.2;
+}
+.svc__cell p{font-size:14px;line-height:1.6;margin:0}
+
+/* ---------- geography ---------- */
+.geo{margin-top:clamp(56px,6vw,88px);border-top:1px solid var(--bone-2);padding-top:clamp(32px,3.5vw,48px)}
+.geo__head{margin-bottom:34px}
+.geo__head h3{margin-top:12px}
+.geo__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bone-2);border:1px solid var(--bone-2)}
+@media(max-width:900px){.geo__grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.geo__grid{grid-template-columns:1fr}}
+.geo__cell{background:var(--bone);padding:clamp(22px,2.2vw,30px);display:flex;flex-direction:column;gap:12px}
+.geo__cell h4{
+  font-family:var(--display);font-variation-settings:'wdth' 112;font-weight:600;
+  font-size:16px;letter-spacing:.01em;color:var(--prussian-deep);
+}
+.geo__cell p{font-size:14.5px;line-height:1.6;margin:0}
+.geo__cell span{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+
+/* ---------- projects ---------- */
+.grid3{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--prussian-line)}
+@media(max-width:1040px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr}}
+.cell{
+  background:var(--prussian);
+  padding:clamp(24px,2.4vw,34px);
+  min-height:210px;
+  display:flex;flex-direction:column;
+  transition:background .2s;
+}
+.cell:hover{background:#173B57}
+.cell h3{font-size:17px;margin:14px 0 12px;line-height:1.24}
+.cell p{font-size:14.5px;line-height:1.62;color:#AFC2CE;margin:0}
+.cell__i{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--brass)}
+
+
+/* ---------- engagements ---------- */
+.eng__note{
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sea);margin-top:20px;
+}
+.eng{margin-top:clamp(44px,5vw,68px);border-top:1px solid var(--prussian-line)}
+.eng__item{padding:clamp(40px,4.5vw,68px) 0;border-bottom:1px solid var(--prussian-line)}
+.eng__head{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(26px,3vw,40px)}
+.eng__no{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--brass);flex:none}
+.eng__head h3{font-size:clamp(20px,1.9vw,28px);font-variation-settings:'wdth' 110}
+.eng__row{
+  display:grid;grid-template-columns:150px 1fr;
+  gap:clamp(16px,3vw,44px);
+  padding:22px 0;
+  border-top:1px solid rgba(34,80,111,.5);
+}
+.eng__row:first-of-type{border-top:0;padding-top:0}
+@media(max-width:760px){
+  .eng__row{grid-template-columns:1fr;gap:10px;padding:20px 0}
+}
+.eng__lbl{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sea);padding-top:5px;
+}
+.eng__txt p{font-size:16px;line-height:1.68;color:#C6D3DC;max-width:66ch;margin:0}
+.eng__txt p+p{margin-top:.9em}
+.eng__list{list-style:none;margin:14px 0 0;padding:0;max-width:66ch}
+.eng__list li{
+  font-size:15px;line-height:1.6;color:#AFC2CE;
+  padding:9px 0 9px 20px;position:relative;
+  border-top:1px solid rgba(34,80,111,.45);
+}
+.eng__list li:first-child{border-top:0}
+.eng__list li::before{
+  content:"";position:absolute;left:0;top:18px;
+  width:8px;height:1px;background:var(--brass);
+}
+
+/* ---------- contact ---------- */
+.contact__grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
+@media(max-width:880px){.contact__grid{grid-template-columns:1fr}}
+.dl{display:grid;gap:26px}
+.dl dt{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sea);margin-bottom:8px;
+}
+.dl dd{font-size:17px;line-height:1.55;color:var(--bone)}
+.dl a{color:var(--bone);text-decoration:none;border-bottom:1px solid var(--brass)}
+.dl a:hover,.dl a:focus-visible{color:var(--brass)}
+
+/* ---------- contact form ---------- */
+.cform{margin-top:34px;display:grid;gap:0}
+.cform__row{
+  display:grid;grid-template-columns:110px 1fr;
+  gap:18px;align-items:center;
+  border-bottom:1px solid var(--prussian-line);
+  padding:4px 0;
+}
+.cform__row--msg{align-items:start;padding-top:14px}
+@media(max-width:640px){
+  .cform__row{grid-template-columns:1fr;gap:6px;padding:12px 0}
+}
+.cform label{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sea);
+}
+.cform input,.cform textarea{
+  background:transparent;border:0;outline:0;
+  font-family:var(--body);font-size:16px;color:var(--bone);
+  padding:13px 0;width:100%;line-height:1.6;
+}
+.cform textarea{resize:vertical;min-height:88px;padding-top:4px}
+.cform input::placeholder,.cform textarea::placeholder{color:#4E6B7F}
+.cform input:focus,.cform textarea:focus{outline:0}
+.cform__row:focus-within{border-bottom-color:var(--brass)}
+.cform__send{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:28px;
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass);background:transparent;
+  padding:14px 22px;border:1px solid var(--brass);
+  cursor:pointer;
+  transition:background .18s,color .18s;
+}
+.cform__send:hover,.cform__send:focus-visible{background:var(--brass);color:var(--prussian-deep)}
+.cform__note{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:#5E7C90;margin-top:18px;
+}
+.cform__hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+
+/* ---------- footer ---------- */
+.foot{background:var(--prussian-deep);border-top:1px solid var(--prussian-line);padding:32px 0}
+.foot__in{
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);
+  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#5E7C90;
+}
+
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* ================= MOBILE PASS ================= */
+@media(max-width:760px){
+
+  /* The desktop veil is calibrated to protect a left-hand text column on a wide
+     viewport. At 390px its radial covers the entire screen and erases the
+     graticule completely. On mobile the type is full-width, so there is no
+     column to protect: the grid moves up and out, the type sits beneath it,
+     and the veil becomes a vertical ramp instead of a radial. */
+  .hero{
+    min-height:92vh;
+    align-items:flex-end;
+    padding-top:clamp(140px,32vh,280px);
+    padding-bottom:clamp(52px,8vw,76px);
+  }
+  #grat{
+    top:24%;
+    left:74%;
+    width:min(76vh,520px);
+    height:min(76vh,520px);
+  }
+  .hero__veil{
+    background:linear-gradient(180deg,
+      rgba(11,31,48,.12) 0%,
+      rgba(11,31,48,.32) 28%,
+      rgba(11,31,48,.86) 56%,
+      rgba(11,31,48,.97) 76%,
+      var(--prussian-deep) 100%);
+  }
+  .hero h1{max-width:none}
+  .hero .standfirst{max-width:none}
+
+  /* Expanded Archivo is a display width. It is wrong below ~760px: a
+     fifteen-word heading at wdth 118 runs to six lines and stops being a
+     headline. Narrowing the axis is the fix, not shrinking the type. */
+  h1{font-variation-settings:'wdth' 106;font-size:clamp(34px,8.6vw,44px)}
+  h2{font-variation-settings:'wdth' 100;font-size:clamp(24px,6.4vw,32px)}
+  h3{font-variation-settings:'wdth' 100}
+
+  #gratFrag{
+    right:-32%;
+    width:min(58vh,400px);
+    height:min(58vh,400px);
+    opacity:.4;
+  }
+}
+
+/* The nav collapsed to nothing below 860px — logo only, no way to reach
+   Contact without scrolling the whole page. For a four-section site a full
+   menu is unnecessary; one destination is not. */
+@media(max-width:860px){
+  .nav__links{display:flex;gap:0}
+  .nav__links a{display:none}
+  .nav__links a[href="#contact"]{display:block}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__in">
+    <a class="mark" href="#top" aria-label="Magis Strategic Resources — home">
+      <svg width="27" height="24" viewBox="0 0 100 88" aria-hidden="true">
+        <polyline points="9,80 9,24 50,58 91,10 91,80" fill="none" stroke="#F0F1EE" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="9" cy="80" r="6.8" fill="#F0F1EE"/><circle cx="9" cy="24" r="6.8" fill="#F0F1EE"/>
+        <circle cx="91" cy="10" r="6.8" fill="#F0F1EE"/><circle cx="91" cy="80" r="6.8" fill="#F0F1EE"/>
+        <circle cx="50" cy="58" r="8.6" fill="#C08A2E"/>
+      </svg>
+      <span class="mark__rule"></span>
+      <span class="mark__type">MAGIS</span>
+    </a>
+    <div class="nav__links">
+      <a href="#mission">Mission</a>
+      <a href="#services">Services</a>
+      <a href="#engagements">Engagements</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HOME ================= -->
+<header class="hero" id="top">
+  <canvas id="grat" aria-hidden="true"></canvas>
+  <div class="hero__veil"></div>
+  <div class="wrap">
+    <div class="hero__meta"><i></i> Magis Strategic Resources</div>
+    <h1>Unlocking strategic resources that shape the future</h1>
+    <p class="standfirst">
+      Advising governments, investors and industry on strategic resource projects — strategy, capital,
+      partnerships and execution.
+    </p>
+    <p class="standfirst" style="font-size:clamp(16px,1.15vw,18px);margin-top:18px;color:#9FB4C2">
+      The critical minerals the world needs are not constrained by geology. They are constrained by
+      structure, capital and trust.
+    </p>
+
+
+  </div>
+</header>
+
+<!-- ================= MISSION ================= -->
+<section class="sec sec--bone" id="mission">
+  <div class="wrap">
+    <div class="sec__head">
+      <span class="eyebrow">01 — Mission</span>
+      <h2>The world's greatest challenge is no longer finding strategic resources. It's unlocking them.</h2>
+    </div>
+
+    <div class="mission__grid">
+      <div>
+        <p class="pull">
+          <em style="color:var(--brass);font-style:italic">Magis</em> is Latin for <em style="font-style:italic">the more</em>: doing more, for the
+          greater good, and refusing to accept mediocrity.
+        </p>
+        <p style="margin-top:34px">
+          It is the standard we hold ourselves to — and why governments, investors and industry trust us
+          with decisions that shape the future.
+        </p>
+      </div>
+      <div class="measure">
+        <p>
+          Critical minerals are no longer a commodity question. They are a question of industrial policy,
+          export control and national security — and governments have moved from encouraging supply to
+          taking equity in it, financing it and contracting for its output.
+        </p>
+        <p>
+          But no country can onshore its way out. Minerals are where they are. The next phase of
+          supply-chain resilience runs through the allied jurisdictions that hold the endowment — and
+          through the harder work of making projects there financeable, governable and durable.
+        </p>
+        <p>
+          That is our practice. We advise governments and state-owned enterprises on unlocking the value
+          of strategic assets. We advise investors and operators on where to commit and how to structure.
+          Where the capital does not yet exist, we assemble it. The firm owns no mining assets.
+        </p>
+        <p>
+          <strong style="color:var(--prussian-deep);font-weight:600">Arrangements that are not fair do not
+          survive, and a supply chain built on arrangements that do not survive is not a supply
+          chain.</strong> This is not sentiment. It is the design requirement — and it is why we are
+          trusted on both sides of the table.
+        </p>
+        <p>
+          We do not claim to be independent of outcomes. Few useful advisers are. We declare every
+          interest before the work begins, and we build arrangements to outlast the transaction that
+          created them.
+        </p>
+      </div>
+    </div>
+
+    <div class="geo">
+      <div class="geo__head">
+        <span class="eyebrow">Where the endowment is</span>
+        <h3>We operate where the minerals are — and where they are hardest to unlock.</h3>
+      </div>
+      <div class="geo__grid">
+        <div class="geo__cell">
+          <span>01</span>
+          <h4>North America</h4>
+          <p>Endowment, the deepest capital markets in the world, and a government now using industrial policy, strategic capital and long-term procurement to reshape critical mineral supply chains. Permitting, not geology, is the binding constraint.</p>
+        </div>
+        <div class="geo__cell">
+          <span>02</span>
+          <h4>Latin America</h4>
+          <p>The largest undeveloped copper endowment on earth, held by states with legitimate views on how it should be developed. Structure decides everything.</p>
+        </div>
+        <div class="geo__cell">
+          <span>03</span>
+          <h4>Australia</h4>
+          <p>Deep endowment across copper, lithium, rare earths and uranium, with the legal architecture to develop it. Well understood — not simple.</p>
+        </div>
+        <div class="geo__cell">
+          <span>04</span>
+          <h4>Africa</h4>
+          <p>Significant endowment, thinner institutional scaffolding. The widest gap between what a well-built arrangement delivers and what a badly built one does.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="sec sec--bone2" id="services">
+  <div class="wrap">
+    <div class="svc__top">
+      <div>
+        <span class="eyebrow">02 — What we do</span>
+        <p class="svc__state" style="margin-top:18px">
+          Strategic advisory, corporate development and consulting across
+          <b>mining, natural resources, energy and critical minerals</b>.
+        </p>
+        <p class="svc__lbl">Sectors</p>
+        <div class="svc__sectors">
+          <span>Mining</span>
+          <span>Natural resources</span>
+          <span>Energy</span>
+          <span>Critical minerals</span>
+        </div>
+        <p class="svc__lbl">Who we work with</p>
+        <div class="svc__sectors">
+          <span>Governments &amp; state-owned enterprises</span>
+          <span>Institutional investors</span>
+          <span>Mining companies</span>
+          <span>Strategic industry</span>
+        </div>
+      </div>
+      <div class="measure">
+        <p>
+          Mergers and acquisitions. Capital markets. Transaction advisory. The instruments are familiar;
+          the terrain is not — copper, uranium, battery materials and rare earths; counterparties that
+          include sovereigns; timelines set by political cycles rather than quarters.
+        </p>
+        <p>
+          We work on the fault, not the rock — where the stakes are high, the structure is unresolved,
+          and getting it wrong is expensive.
+        </p>
+      </div>
+    </div>
+
+    <div class="svc__grid">
+      <div class="svc__cell">
+        <em>01</em>
+        <h4>Strategic advisory</h4>
+        <p>What to hold, what to enter, what to walk away from. The decision that comes before the transaction, and determines whether it should happen at all.</p>
+      </div>
+      <div class="svc__cell">
+        <em>02</em>
+        <h4>Government &amp; sovereign advisory</h4>
+        <p>Public counterparties hold the world's most significant undeveloped assets, and are asked to make irreversible decisions on unequal information. We help states attract investment on defensible terms and strengthen the governance behind it. A well-structured project serves the state and the investor at once; a badly structured one serves neither.</p>
+      </div>
+      <div class="svc__cell">
+        <em>03</em>
+        <h4>Corporate development</h4>
+        <p>Origination, screening and pipeline discipline. Building a strategy rather than reacting to whatever arrives.</p>
+      </div>
+      <div class="svc__cell">
+        <em>04</em>
+        <h4>Strategic capital</h4>
+        <p>Institutional equity, royalties and streams, development finance, export credit and strategic capital — sequenced so the project survives what comes.</p>
+      </div>
+      <div class="svc__cell">
+        <em>05</em>
+        <h4>Mergers &amp; acquisitions</h4>
+        <p>Acquisitions, divestments, earn-ins and joint ventures. Value is won or lost in the structure, not the price.</p>
+      </div>
+      <div class="svc__cell">
+        <em>06</em>
+        <h4>Transaction advisory</h4>
+        <p>Diligence, valuation and negotiation. Establishing what is actually being bought, and at what real cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= SELECTED ENGAGEMENTS ================= -->
+<section class="sec sec--deep" id="engagements">
+  <canvas id="gratFrag" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="sec__head">
+      <span class="eyebrow">03 — Selected Engagements</span>
+      <h2>Representative engagements.</h2>
+      <p class="lede" style="color:#B9CAD6">
+        Illustrative of the strategic advisory work Magis undertakes. Client identities remain
+        confidential.
+      </p>
+      <p class="eng__note">Engagements led by the firm&rsquo;s principals.</p>
+    </div>
+
+    <div class="eng">
+
+      <div class="eng__item">
+        <div class="eng__head">
+          <span class="eng__no">01</span>
+          <h3>Strategic Mining Investment Advisory</h3>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Background</div>
+          <div class="eng__txt">
+            <p>A private family office with no prior exposure to mining sought an independent assessment of the sector, as geopolitical attention turned to critical minerals and security of supply.</p>
+          </div>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Challenge</div>
+          <div class="eng__txt">
+            <p>The question was not which asset to buy. It was whether mining warranted a place in the portfolio at all — and if so, on what basis. The client required a structured understanding of:</p>
+            <ul class="eng__list">
+              <li>How the industry operates, and why it cycles</li>
+              <li>The opportunity set across the value chain — exploration, development, production, royalties and streaming</li>
+              <li>Capital requirements, investment horizons and risk-return characteristics at each stage</li>
+              <li>How each of these mapped to the family&rsquo;s objectives, ticket size and risk appetite</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Our role</div>
+          <div class="eng__txt">
+            <p>Strategic advisory designed to build a durable investment framework rather than to recommend individual securities. The work was structured around the decisions the family would face repeatedly, not the opportunity in front of them.</p>
+          </div>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Outcome</div>
+          <div class="eng__txt">
+            <p>The client came away with a structured understanding of the sector and a disciplined basis for evaluating strategic resource opportunities as they arise.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="eng__item">
+        <div class="eng__head">
+          <span class="eng__no">02</span>
+          <h3>Government Training &amp; Capacity Building</h3>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Background</div>
+          <div class="eng__txt">
+            <p>A ministry of mines in an emerging jurisdiction sought to strengthen institutional capability as it advanced development of its strategic mineral resources.</p>
+          </div>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Challenge</div>
+          <div class="eng__txt">
+            <p>Officials negotiating with international investors required a working understanding of how the industry actually operates — how projects are financed, how capital decides, and what a jurisdiction must do to attract long-term investment on terms that serve it.</p>
+          </div>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Our role</div>
+          <div class="eng__txt">
+            <p>Design and delivery of an executive programme covering:</p>
+            <ul class="eng__list">
+              <li>The global mining industry and the project life cycle, from exploration to production</li>
+              <li>Project financing and capital markets</li>
+              <li>Mergers, acquisitions and joint venture structures</li>
+              <li>Commodity cycles and investment decision-making</li>
+              <li>The relationship between governments and investors, and how projects are positioned to attract international capital</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="eng__row">
+          <div class="eng__lbl">Outcome</div>
+          <div class="eng__txt">
+            <p>Participants left with a clearer understanding of the investment process, supporting more informed decision-making as the jurisdiction advances its strategic mineral resources.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec sec--ink" id="contact">
+  <div class="contact__trace" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="contact__grid">
+      <div>
+        <span class="eyebrow">04 — Contact</span>
+        <h2 style="margin-top:14px">Start with the problem, not the mandate.</h2>
+        <p class="lede" style="color:#B9CAD6;margin-top:24px">
+          The most useful conversations start with a decision that has to be made and cannot yet be made
+          well: a project that will not fund, a counterparty that will not commit, an asset a government
+          does not know how to bring to market.
+        </p>
+        <p class="lede" style="color:var(--bone);margin-top:18px">If these are the questions in front of you, we would welcome a confidential conversation.</p>
+
+        <!-- FORM ENDPOINT: replace YOUR_FORM_ID with the ID from formspree.io -->
+        <form class="cform" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="cform__row">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" type="text" name="name" required autocomplete="name">
+          </div>
+          <div class="cform__row">
+            <label for="cf-org">Organisation</label>
+            <input id="cf-org" type="text" name="organisation" autocomplete="organization">
+          </div>
+          <div class="cform__row">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" name="email" required autocomplete="email">
+          </div>
+          <div class="cform__row cform__row--msg">
+            <label for="cf-msg">Enquiry</label>
+            <textarea id="cf-msg" name="message" rows="4" required placeholder="The decision you are facing."></textarea>
+          </div>
+          <input class="cform__hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="magisstrategic.com — enquiry">
+          <div><button class="cform__send" type="submit">Send <em style="font-style:normal">&rarr;</em></button></div>
+          <p class="cform__note">Or write directly &mdash; <a href="mailto:info@magisstrategic.com" style="color:var(--sea);text-decoration:none;border-bottom:1px solid var(--prussian-line)">info@magisstrategic.com</a></p>
+        </form>
+      </div>
+      <div>
+        <dl class="dl">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@magisstrategic.com">info@magisstrategic.com</a></dd>
+          </div>
+          <div>
+            <dt>Office</dt>
+            <dd>1401 Lawrence St #1800<br>Denver, Colorado 80202<br>United States</dd>
+          </div>
+          <div>
+            <dt>Entity</dt>
+            <dd>Magis Strategic Resources, Inc.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__in">
+    <span>© 2026 Magis Strategic Resources, Inc.</span>
+    <span>Denver, Colorado</span>
+    <span style="color:var(--brass)">Magis — the more</span>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var DEG = Math.PI/180;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // brass ticks sit at the latitudes where the endowment is:
+  // North America, Latin America, Australia, Africa
+  var ENDOWMENT = [45, -15, -25, 0];
+
+  function makeGraticule(cv, opts){
+    if(!cv) return null;
+    var ctx = cv.getContext('2d');
+    var lat0 = opts.lat0, R = 0, cx = 0, cy = 0, dpr = 1;
+
+    function size(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var w = cv.offsetWidth, hgt = cv.offsetHeight;
+      cv.width = w * dpr; cv.height = hgt * dpr;
+      R = Math.min(w, hgt) * 0.46 * dpr;
+      cx = (w * dpr) / 2; cy = (hgt * dpr) / 2;
+    }
+
+    function project(lat, lon, lon0){
+      var p = lat*DEG, l = (lon - lon0)*DEG, p0 = lat0*DEG;
+      var cosc = Math.sin(p0)*Math.sin(p) + Math.cos(p0)*Math.cos(p)*Math.cos(l);
+      if (cosc < 0) return null;
+      return [ cx + R*Math.cos(p)*Math.sin(l),
+               cy - R*(Math.cos(p0)*Math.sin(p) - Math.sin(p0)*Math.cos(p)*Math.cos(l)) ];
+    }
+
+    function stroke(pts){
+      ctx.beginPath();
+      var pen = false;
+      for (var i=0;i<pts.length;i++){
+        var pt = pts[i];
+        if (!pt){ pen = false; continue; }
+        if (pen) ctx.lineTo(pt[0], pt[1]); else ctx.moveTo(pt[0], pt[1]);
+        pen = true;
+      }
+      ctx.stroke();
+    }
+
+    function draw(lon0){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      ctx.lineWidth = 0.9 * dpr;
+
+      // limb
+      ctx.strokeStyle = 'rgba(134,169,188,' + (0.3*opts.alpha) + ')';
+      ctx.lineWidth = 1.1 * dpr;
+      ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI*2); ctx.stroke();
+
+      // parallels
+      ctx.lineWidth = 0.9 * dpr;
+      for (var lat=-75; lat<=75; lat+=15){
+        ctx.strokeStyle = (lat===0)
+          ? 'rgba(134,169,188,' + (0.42*opts.alpha) + ')'
+          : 'rgba(34,80,111,' + (0.95*opts.alpha) + ')';
+        var pts=[];
+        for (var lon=-180; lon<=180; lon+=2) pts.push(project(lat,lon,lon0));
+        stroke(pts);
+      }
+      // meridians
+      ctx.strokeStyle = 'rgba(34,80,111,' + (0.95*opts.alpha) + ')';
+      for (var m=-180; m<180; m+=15){
+        var q=[];
+        for (var la=-90; la<=90; la+=2) q.push(project(la,m,lon0));
+        stroke(q);
+      }
+      // endowment ticks
+      ctx.fillStyle = 'rgba(192,138,46,' + (0.8*opts.alpha) + ')';
+      for (var e=0;e<ENDOWMENT.length;e++){
+        for (var lo=-180; lo<180; lo+=15){
+          var p = project(ENDOWMENT[e], lo, lon0);
+          if (!p) continue;
+          ctx.beginPath(); ctx.arc(p[0], p[1], 1.15*dpr, 0, Math.PI*2); ctx.fill();
+        }
+      }
+    }
+
+    size();
+    return { size:size, draw:draw };
+  }
+
+  // ---- hero: full instrument, one degree per minute ----
+  var hero = makeGraticule(document.getElementById('grat'), { lat0: 22, alpha: 1 });
+  if (hero){
+    var lon0 = -95, last = null, acc = 0;
+    hero.draw(lon0);
+    window.addEventListener('resize', function(){ hero.size(); hero.draw(lon0); });
+    if (!reduce){
+      var tick = function(t){
+        if (last === null) last = t;
+        var dt = t - last; last = t;
+        lon0 += dt / 60000;            // 1 degree per minute
+        acc += dt;
+        if (acc > 90){ hero.draw(lon0); acc = 0; }   // ~11fps, imperceptible
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }
+  }
+
+  // ---- engagements: static fragment, edge-cropped ----
+  var frag = makeGraticule(document.getElementById('gratFrag'), { lat0: -18, alpha: 0.85 });
+  if (frag){
+    frag.draw(28);
+    window.addEventListener('resize', function(){ frag.size(); frag.draw(28); });
+  }
+})();
+</script>
+</body>
+</html>
